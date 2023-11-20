@@ -18,7 +18,7 @@ public class Main {
 		EmpresaController controlador=new EmpresaController(departamento,empleados,proyectos);
 
 		while (true) {
-			System.out.println("Selecciona una opción:\n" + "1. Mostrar departamentos\n"
+			System.out.println("Selecciona una opción  :\n" + "1. Mostrar departamentos\n"
 					+ "2. Buscar departamento\n" + "3. Agregar departamentos\n" + "4. Eliminar departamento\n"
 					+ "5. Mostar empleados\n" + "6. Buscar empleado \n" + "7. Añadir empleado" + "8. Eliminar empleado"
 					+ "9.Mostrar proyectos" + "10. Buscar proyecto" + "11. Agregar proyecto" + "12. Eliminar proyecto"
