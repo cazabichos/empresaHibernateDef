@@ -39,7 +39,7 @@ public class Departamento {
 	
 	private String nombreDepartamento;
 	
-	@OneToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST})
+	@OneToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST},fetch=FetchType.EAGER)
 	@JoinColumn(nullable=true,name="jefe")
 	private Empleado jefe;
 	

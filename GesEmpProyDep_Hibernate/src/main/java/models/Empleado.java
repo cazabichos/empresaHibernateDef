@@ -8,6 +8,7 @@ import models.Empleado;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -35,13 +36,16 @@ public class Empleado {
 	
 	private int salario;
 	
-	@ManyToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST})
+	@ManyToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST},fetch=FetchType.EAGER)
 	@JoinColumn(nullable=true,name="departamento")
 	private Departamento departamento;
 	
-	@ManyToMany(cascade= {CascadeType.MERGE,CascadeType.PERSIST})
+	@ManyToMany(cascade= {CascadeType.MERGE,CascadeType.PERSIST},fetch=FetchType.EAGER)
 	private List<Proyecto> proyectos;
 	
-	
-	
+	public Empleado (String nombre,int salario,Departamento departamento) {
+		this.nombreEmpleado=nombre;
+		this.salario=salario;
+		this.departamento=departamento;
+}
 }
