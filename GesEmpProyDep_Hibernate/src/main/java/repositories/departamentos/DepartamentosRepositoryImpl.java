@@ -12,8 +12,10 @@ import models.Departamento;
 
 public class DepartamentosRepositoryImpl implements DepartamentosRepository {
 	
-	
-
+	/**
+     * Obtiene la lista de todos los departamentos.
+     * @return Lista de departamentos.
+     */
 	@Override
 	public List<Departamento> findAll() {
 		 HibernateManager hb = HibernateManager.getInstance();
@@ -36,6 +38,11 @@ public class DepartamentosRepositoryImpl implements DepartamentosRepository {
 		    }
 	}
 
+	/**
+     * Busca un departamento por su ID.
+     * @param id ID del departamento a buscar.
+     * @return Optional que contiene el departamento si se encuentra, o vacío si no.
+     */
 	@Override
 	public Optional<Departamento> findById(Integer id) {
 		HibernateManager hb = HibernateManager.getInstance();
@@ -56,6 +63,11 @@ public class DepartamentosRepositoryImpl implements DepartamentosRepository {
 	    }
 	}
 
+	/**
+     * Guarda o actualiza un departamento en la base de datos.
+     * @param entity Departamento a guardar o actualizar.
+     * @return true si la operación fue exitosa, false en caso contrario.
+     */
 	@Override
 	public boolean save(Departamento entity) {
 		
@@ -80,6 +92,11 @@ public class DepartamentosRepositoryImpl implements DepartamentosRepository {
         }
 	}
 
+	/**
+     * Elimina un departamento de la base de datos.
+     * @param entity Departamento a eliminar.
+     * @return true si la operación fue exitosa, false en caso contrario.
+     */
 	@Override
 	public Boolean delete(Departamento entity) {
 		 HibernateManager hb = HibernateManager.getInstance();

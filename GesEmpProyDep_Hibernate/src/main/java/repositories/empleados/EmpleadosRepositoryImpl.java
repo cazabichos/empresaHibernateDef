@@ -9,6 +9,10 @@ import models.Empleado;
 
 public class EmpleadosRepositoryImpl implements EmpleadosRepository {
 
+	/**
+     * Obtiene la lista de todos los empleados.
+     * @return Lista de empleados.
+     */
 	@Override
 	public List<Empleado> findAll() {
 		HibernateManager hb = HibernateManager.getInstance();
@@ -31,6 +35,11 @@ public class EmpleadosRepositoryImpl implements EmpleadosRepository {
         }
 	}
 
+	/**
+     * Busca un empleado por su ID.
+     * @param id ID del empleado a buscar.
+     * @return Optional que contiene el empleado si se encuentra, o vacío si no.
+     */
 	@Override
 	public Optional<Empleado> findById(Integer id) {
 		HibernateManager hb = HibernateManager.getInstance();
@@ -51,6 +60,11 @@ public class EmpleadosRepositoryImpl implements EmpleadosRepository {
         }
 	}
 
+	/**
+     * Guarda o actualiza un empleado en la base de datos.
+     * @param entity Empleado a guardar o actualizar.
+     * @return true si la operación fue exitosa, false en caso contrario.
+     */
 	@Override
 	public boolean save(Empleado entity) {
 		  HibernateManager hb = HibernateManager.getInstance();
@@ -72,6 +86,11 @@ public class EmpleadosRepositoryImpl implements EmpleadosRepository {
 	        }
 	}
 
+	/**
+     * Elimina un empleado de la base de datos.
+     * @param entity Empleado a eliminar.
+     * @return true si la operación fue exitosa, false en caso contrario.
+     */
 	@Override
 	public Boolean delete(Empleado entity) {
 		 HibernateManager hb = HibernateManager.getInstance();

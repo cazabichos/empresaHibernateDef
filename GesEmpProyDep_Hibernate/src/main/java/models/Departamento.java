@@ -20,6 +20,9 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
 
+/**
+ * Clase que representa la entidad "Departamento" en la base de datos.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,8 +33,6 @@ import lombok.*;
 			query="SELECT d FROM Departamento d"),
 })
 public class Departamento {
-	
-
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

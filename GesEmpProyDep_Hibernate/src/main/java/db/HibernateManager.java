@@ -18,21 +18,32 @@ public class HibernateManager {
     private EntityManager manager;
     private EntityTransaction transaction;
 
+    // Constructor privado para implementar el patrón Singleton
     private HibernateManager() {
     }
 
+    /**
+     * Método estático que devuelve la única instancia de HibernateManager.
+     * @return Instancia de HibernateManager.
+     */
     public static HibernateManager getInstance() {
         if (controller == null)
             controller = new HibernateManager();
         return controller;
     }
 
+    /**
+     * Método para abrir la conexión con la base de datos.
+     */
     public void open() {
         entityManagerFactory = Persistence.createEntityManagerFactory("unidad-persistencia");
         manager = entityManagerFactory.createEntityManager();
         transaction = manager.getTransaction();
     }
 
+    /**
+     * Método para cerrar la conexión con la base de datos.
+     */
     public void close() {
         manager.close();
         entityManagerFactory.close();
